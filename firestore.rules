@@ -1,0 +1,16 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Reguły dla kolekcji zawodników
+    match /players/{playerId} {
+      // Odczyt wymaga uwierzytelnienia
+      allow read: if request.auth != null;
+
+      // Zapis (create, update, delete) wymaga uwierzytelnienia
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+  }
+}
