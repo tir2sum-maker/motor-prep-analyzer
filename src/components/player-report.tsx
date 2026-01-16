@@ -15,10 +15,10 @@ interface PlayerReportProps {
 
 export function PlayerReport({ player, calculations, onExportPDF }: PlayerReportProps) {
   const getZScoreColor = (zScore?: number) => {
-    if (!zScore) return 'text-gray-600';
-    if (zScore > 1) return 'text-green-600';
-    if (zScore > -0.5) return 'text-gray-600';
-    return 'text-red-600';
+    if (!zScore) return 'text-[#6B7280]';
+    if (zScore > 1) return 'text-[#27AE60]';
+    if (zScore > -0.5) return 'text-[#6B7280]';
+    return 'text-[#EB5757]';
   };
 
   const getZScoreText = (zScore?: number) => {
@@ -79,9 +79,9 @@ export function PlayerReport({ player, calculations, onExportPDF }: PlayerReport
             />
           </div>
           {calculations.maturityOffset < -0.5 && (
-            <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
-              <p className="text-sm text-blue-800">
-                <strong>Late Bloomer:</strong> Zawodnik jest w fazie opóźnionego dojrzewania.
+            <div className="mt-4 p-4 bg-[#F5F6F8] border border-[#2F80ED] rounded-md">
+              <p className="text-sm text-[#2E2E2E]">
+                <strong className="text-[#0F2A44]">Late Bloomer:</strong> Zawodnik jest w fazie opóźnionego dojrzewania.
                 Spodziewany jest znaczący rozwój fizyczny w najbliższych latach.
               </p>
             </div>
@@ -201,16 +201,16 @@ export function PlayerReport({ player, calculations, onExportPDF }: PlayerReport
             </div>
           )}
           {player.dniKontuzji && player.dniKontuzji > 0 && (
-            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md">
-              <p className="text-sm text-red-800">
-                Zawodnik opuścił <strong>{player.dniKontuzji} dni</strong> z powodu kontuzji.
+            <div className="mt-4 p-4 bg-[#F5F6F8] border border-[#EB5757] rounded-md">
+              <p className="text-sm text-[#2E2E2E]">
+                <strong className="text-[#EB5757]">Kontuzja:</strong> Zawodnik opuścił <strong>{player.dniKontuzji} dni</strong> z powodu kontuzji.
               </p>
             </div>
           )}
           {calculations.procentSprintu > 12 && (
-            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md">
-              <p className="text-sm text-green-800">
-                <strong>Wysoka wydajność fizyczna:</strong> Procent sprintów powyżej średniej.
+            <div className="mt-4 p-4 bg-[#F5F6F8] border border-[#27AE60] rounded-md">
+              <p className="text-sm text-[#2E2E2E]">
+                <strong className="text-[#27AE60]">Wysoka wydajność fizyczna:</strong> Procent sprintów powyżej średniej.
               </p>
             </div>
           )}
