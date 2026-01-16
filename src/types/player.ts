@@ -6,7 +6,7 @@ export interface Player {
   wiekKalendarzowy: number; // np. 17.5
   wiekBiologiczny?: number; // obliczany automatycznie
   pozycja: string; // np. "Napastnik", "Obrońca"
-  wKlubieOd: number; // rok, np. 2015
+  wKlubieOd?: number; // rok, np. 2015
   wyksztalcenie?: string;
 
   // Parametry fizyczne
@@ -15,9 +15,7 @@ export interface Player {
   waga: number; // kg
   wagaPoprzednia?: number;
   phv?: number; // Peak Height Velocity
-  tkankaT
-
-luszczowa?: number; // %
+  tkankaTluszczowa?: number; // %
 
   // Statystyki boiskowe
   dniTreningowe?: number;
